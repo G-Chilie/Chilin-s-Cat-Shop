@@ -5,9 +5,10 @@ Chilin Cat Shop is an adoption tracking system for Cats. This DApp is an efficie
 # The Tech Stack Of This DApp
 
 1. Javascript
-1. Truffle
-2. Ganache
-
+2. Solidity Smart Contract
+3. Truffle
+4. Ganache
+5. Polygon TestNet
 
 # Using The DApp
 
