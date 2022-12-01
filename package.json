@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/G-Chilie/Chilin-s-Cat-Shop#readme",
   "dependencies": {
+    "lite-server": "^2.6.1",
     "web3": "^1.8.1"
   }
 }
