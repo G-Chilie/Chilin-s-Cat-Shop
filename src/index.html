@@ -18,15 +18,21 @@
     <![endif]-->
   </head>
   <body>
+
+   
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <h1 class="text-center">Chilin's Cat Shop</h1>
+          <h1 class="text-center" style="color: #484848;">Chilin's Cat Shop</h1>
           <hr/>
           <br/>
         </div>
       </div>
-
+      <div class="wall-img">
+        <img src="images/CatW4.jpeg" alt="Adapt a Cat" style="height: 100%; width: 100%; opacity: 60%; " />
+        <button id="connect-button">Connect Metamask</button>
+      </div> 
+      <br/>
       <div id="petsRow" class="row">
         <!-- PETS LOAD HERE -->
       </div>
@@ -44,17 +50,66 @@
             <strong>Breed</strong>: <span class="pet-breed">Golden Retriever</span><br/>
             <strong>Age</strong>: <span class="pet-age">3</span><br/>
             <strong>Location</strong>: <span class="pet-location">Warren, MI</span><br/><br/>
-            <button class="btn btn-default btn-adopt" type="button" data-id="0">Adopt</button>
+            <button class="btn btn-default btn-adopt" type="button" id="send-button" >Adopt</button>
+            <!-- data-id="0" -->
           </div>
         </div>
       </div>
     </div>
 
+    <div class="" style="display: flex; justify-content: center; ">
+    <footer style=" width: 79%; height: 50%;  text-align: center; padding: 3px; background-color: rgb(227, 137, 107); color: #f0f0f0; ">
+      <p>Author: Chinwe Okonkwo</p>
+      <p><a href="mailto:chinwetop@gmail.com">chinwetop@gmail.com</a></p>
+    </footer>
+   </div>
+
+   <script>
+        document.getElementById('connect-button').addEventListener('click', event => {
+        let account;
+        let button = event.target
+        ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
+        account = accounts[0];
+        console.log(account);
+        button.textContent = account; 
+
+        ethereum.request({method: 'eth_getBalance' , params: [account, 'latest']}).then(result => {
+        console.log(result);
+
+        console.log(balance + " ETH");
+
+        });
+        });
+      });
+
+      document.getElementById('send-button').addEventListener('click', event =>{
+        let transactionParam = {
+          to: '0xcadaf9328a6fb8918da2544e3f0b6b39c279dd88',
+          from: account,
+          value: '0x38D7EA4C68000'
+        };
+        ethereum.request({method: 'eth_sendTransaction', params:[transactionParam]}).then(txhash => {
+          console.log(txhash);
+          checkTransactionconfirmation(txhash).then(r => alert(r));
+        });
+      });
+
+      function checkTransactionconfirmation(txhash){
+        let checkTransactionLoop = () => {
+          return ethereum.request({method:'eth_getTransactionReceipt',params:[txhash]}).then(t => {
+            if(r !=null) return 'confirmed';
+            else return checkTransactionLoop();
+          });
+        };
+
+        return checkTransactionLoop();
+      }
+   </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/web3.min.js"></script>
+    <!-- <script src="js/web3.min.js"></script> -->
     <script src="js/truffle-contract.js"></script>
     <script src="js/app.js"></script>
   </body>
