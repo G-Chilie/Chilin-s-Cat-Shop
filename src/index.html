@@ -30,7 +30,24 @@
       </div>
       <div class="wall-img">
         <img src="images/CatW4.jpeg" alt="Adapt a Cat" style="height: 100%; width: 100%; opacity: 60%; " />
-        <button id="connect-button">Connect Metamask</button>
+        <button id="connect-button" style="    border: solid 2px #484848;
+        border-radius: 9px;
+        font-size: 20px;
+        padding: 20px 40px 20px 70px;
+        background: #dd6e2e;
+        background-image: url(images/mm.png);
+        background-size: 40px;
+        background-repeat: no-repeat;
+        background-position: 20px;
+        font-weight: bold;
+        color: #fff;
+        box-shadow: inset 2px 2px 0 #dedede, 0 8px 10px -4px rgb(99 99 99 / 40%);
+        cursor: pointer;
+        transition: all 0.4s ease;
+        position: relative;
+        left: 204px;
+        bottom: 131px;">Connect Metamask</button>
+        
       </div> 
       <br/>
       <div id="petsRow" class="row">
@@ -50,8 +67,7 @@
             <strong>Breed</strong>: <span class="pet-breed">Golden Retriever</span><br/>
             <strong>Age</strong>: <span class="pet-age">3</span><br/>
             <strong>Location</strong>: <span class="pet-location">Warren, MI</span><br/><br/>
-            <button class="btn btn-default btn-adopt" type="button" id="send-button" >Adopt</button>
-            <!-- data-id="0" -->
+            <button class="btn btn-default btn-adopt" type="button" id="send-button" data-id="0" >Adopt</button>
           </div>
         </div>
       </div>
@@ -109,7 +125,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- <script src="js/web3.min.js"></script> -->
+    <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.js"></script>
     <script src="js/app.js"></script>
   </body>
