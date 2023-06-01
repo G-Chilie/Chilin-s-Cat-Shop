@@ -1,6 +1,6 @@
 # Chilin-s-Cat-Shop
 
-Chilin Cat Shop is an adoption tracking system for Cats. This DApp is an efficient way to handle pet adoptions using Ethereum. The store has space for 16 Cats at a given time. Chilin dapp associates an Ethereum address with a cat to be adopted.
+Chilin Cat Shop is an opensource DAPP for adoption tracking system for pets but for now we are working with Cats. This DApp is an efficient way to handle pet adoptions, treatment and wellness tips using Ethereum. The store has space for 16 Cats at a given time. Chilin dapp associates an Ethereum address with a cat to be adopted.
 
 # The Tech Stack Of This DApp
 
